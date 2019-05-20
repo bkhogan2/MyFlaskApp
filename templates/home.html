@@ -5,5 +5,9 @@
     <h1>Welcome to FlaskApp</h1>
     <p class="lead">This application is built on the flask framework and is the focus for the "Python Flask from
         Scratch" YouTube series</p>
+    {% if session.logged_in == NULL %}
+    <a href="/register" class="btn btn-primary">Register</a>
+    <a href="/login" class="btn btn-success">Login</a>
+    {% endif %}
 </div>
 {% endblock %}
