@@ -19,9 +19,14 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item">
-                <a class="nav-link" href="/register">Register</a>
-            </li>
+
+            {% if session.logged_in %}
+            <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+            <li class="nav-item"><a href="/dashboard" class="nav-link">Dashboard</a></li>
+            {% else %}
+            <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+            <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+            {% endif %}
         </ul>
     </div>
 </nav>
